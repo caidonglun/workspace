@@ -1,0 +1,17 @@
+
+server:
+  port: 8057
+
+
+#配置security的账号密码
+#security:
+#  basic:
+#    enabled: true
+#  user:
+#    name: user
+#    password: user
+
+
+
+#encrypt:
+#  key: foo

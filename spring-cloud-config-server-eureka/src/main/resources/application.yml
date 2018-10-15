@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: spring-cloud-config-server-eureka
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/caidonglun/spring-cloud-config-server-test.git
+
+server:
+  port: 8058
+  
+
+
+eureka:
+  client: 
+    service-url:
+      defaultZone: http://localhost:80/eureka/
+  instance:
+     prefer-ip-address: true
+                  

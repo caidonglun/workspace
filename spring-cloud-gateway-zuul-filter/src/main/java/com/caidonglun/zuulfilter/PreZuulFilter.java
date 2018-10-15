@@ -1,0 +1,46 @@
+package com.caidonglun.zuulfilter;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.netflix.zuul.ZuulFilter;
+import com.netflix.zuul.context.RequestContext;
+import com.netflix.zuul.exception.ZuulException;
+
+
+public class PreZuulFilter extends ZuulFilter {
+	
+	private static final Logger log = LoggerFactory.getLogger(PreZuulFilter.class);
+
+
+	@Override
+	public boolean shouldFilter() {
+		// TODO Auto-generated method stub
+		return true;
+	}
+
+	@Override
+	public Object run() throws ZuulException {
+		// TODO Auto-generated method stub
+		HttpServletRequest request = RequestContext.getCurrentContext().getRequest();
+		String remoteHost = request.getRemoteHost();
+		log.info("请求的host:{}",remoteHost);
+		
+		return null;
+	}
+
+	@Override
+	public String filterType() {
+		// TODO Auto-generated method stub
+		return "pre";
+	}
+
+	@Override
+	public int filterOrder() {
+		// TODO Auto-generated method stub
+		return 1;
+	}
+
+}

@@ -1,0 +1,16 @@
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/caidonglun/spring-cloud-config-server-test.git
+          username: 
+          password: 
+
+server:
+  port: 8055
+
+
+
+encrypt:
+  key: foo

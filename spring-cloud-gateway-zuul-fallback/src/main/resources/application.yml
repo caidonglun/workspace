@@ -1,0 +1,53 @@
+server.port: 8067
+
+eureka: 
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:80/eureka/
+      
+spring:
+  application:
+    name: spring-cloud-gateway-zuul-fallback
+    
+    
+#    可用内容  
+zuul:
+  routes:
+    user:
+      path: /test/**
+      serviceId: eureka-ribbon
+      
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 60000
+ribbon:
+  ConnectTimeout: 3000
+  ReadTimeout: 60000
+      
+#      用于负载均匀
+#ribbon:
+#  eureka:
+#    enabled: false
+#
+#eureka-ribbon:  #这里是ribbon用的serviceId切记
+#  ribbon:
+#    listOfServers: http://localhost:8090,http://localhost:8091
+    
+#    可用内容  
+#zuul:
+#  routes:
+#    eureka-ribbon:
+#      path: /test/**
+#      serviceId: eureka-ribbon
+    
+    
+#    可用内容  
+#zuul: 
+#  #ignoredServices: '*' #这里所谓的拒绝，是在通过zuul访问其他微服务的时，是不成功的，如果没有设置本属性，在通过本zuul访问其他微服务上的节点时可行的
+#  routes:
+#    eureka-ribbon: /test/**    #这里的键值对（绿色字为注册在eureka上的项目的spring.application.name的值），后面的值为要映射成的路径。
+    
+#security:
+#  basic:
+#    enabled: true # 启用SpringSecurity的安全配置项
+#  user:
+#    name: user # 认证用户名
+#    password: user # 认证密码

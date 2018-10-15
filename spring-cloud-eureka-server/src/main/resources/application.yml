@@ -1,0 +1,20 @@
+server.port: 80
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    healthcheck:
+      enabled: true
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://localhost:80/eureka/
+      
+      
+#security:
+#  basic:
+#    enabled: true # 启用SpringSecurity的安全配置项
+#  user:
+#    name: user # 认证用户名
+#    password: user # 认证密码

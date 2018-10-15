@@ -1,0 +1,35 @@
+server.port: 8065
+
+eureka: 
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:80/eureka/
+      
+spring:
+  application:
+    name: spring-boot-gateway-zuul-configuration
+    
+    
+zuul:
+  prefix: /eureka-ribbon
+  stripPrefix: false
+  
+logging:
+  level:
+    com.netflix: debug
+    
+#    可用内容  
+#zuul:
+#  routes:
+#    user:
+#      path: /test/**
+#      serviceId: eureka-ribbon
+#      
+#ribbon:
+#  eureka:
+#    enabled: false
+#
+#eureka-ribbon:  #这里是ribbon用的serviceId切记
+#  ribbon:
+#    listOfServers: http://localhost:8090,http://localhost:8091
+#    

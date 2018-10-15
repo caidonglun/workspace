@@ -1,0 +1,6 @@
+ribbon-consumer-file-configuration:
+  ribbon:
+    NIWSServerListClassName: com.netflix.loadbalancer.ConfigurationBasedServerList
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+    
+#    com.netflix.loadbalancer.WeightedResponseTimeRule

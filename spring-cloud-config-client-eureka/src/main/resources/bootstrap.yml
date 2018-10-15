@@ -1,0 +1,21 @@
+spring: 
+  cloud: 
+    config:
+      discovery:
+        enabled: true
+        service-id: spring-cloud-config-server-eureka
+  
+#    config: 
+#      uri: http://localhost:8052
+#      profile: production
+#      label: master  #当configserver的后端存储是Git时，默认是master
+  application:
+    name: foobar #会在git上找和name相同的配置文件，如果找不到，就是默认的配置文件。
+    
+    
+eureka:
+  client: 
+    service-url:
+      defaultZone: http://localhost:80/eureka/
+  instance:
+     prefer-ip-address: true

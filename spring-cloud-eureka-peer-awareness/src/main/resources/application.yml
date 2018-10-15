@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: eureka-HA
+
+---
+spring:
+  profiles: peer1
+eureka:
+  instance:
+    hostname: peer1
+  client:
+    serviceUrl:
+      defaultZone: http://peer2:8082/eureka/
+#      设置eureka管理面板是否可用和面板路径
+  dashboard:
+    enabled: true
+    path: /a
+      
+server:
+  port: 8081
+  
+
+---
+spring:
+  profiles: peer2
+eureka:
+  instance:
+    hostname: peer2
+  client:
+    serviceUrl:
+      defaultZone: http://peer1:8081/eureka/
+      
+server:
+  port: 8082

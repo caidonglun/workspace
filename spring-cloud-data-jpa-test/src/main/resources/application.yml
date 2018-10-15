@@ -1,0 +1,17 @@
+#spring:
+#  jpa:
+#    generate-ddl: false
+#    show-sql: true
+#    hibernate:
+#      ddl-auto: none
+#  datasource:
+#    platform: h2
+#    hikari:
+#      schema: classpath:schema.sql
+#      data-source-class-name: classpath:data.sql
+logging:
+  level:
+    root: info
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
+    com.itmuch: debug

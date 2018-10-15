@@ -1,0 +1,11 @@
+#可行
+#turbine:
+#  aggregator:
+#    clusterConfig: default
+#  appConfig: ribbon-hystrix-turbine,RIBBON-HYSTRIX
+#  clusterNameExpression: "'default'"
+  
+
+turbine:
+    appConfig: ribbon-hystrix-turbine,RIBBON-HYSTRIX
+    clusterNameExpression: "'default'"

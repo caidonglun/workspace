@@ -1,0 +1,6 @@
+server:
+  port: 8041
+  
+management:
+  security:
+    enabled: false

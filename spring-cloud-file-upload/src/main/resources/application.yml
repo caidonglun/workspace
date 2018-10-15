@@ -1,0 +1,23 @@
+server.port: 8066
+spring:
+  application:
+    name: file-upload
+  http:
+    multipart:
+      max-file-size: 2000Mb
+      max-request-size: 2500Mb
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:80/eureka/
+      
+      
+#security:
+#  basic:
+#    enabled: true # 启用SpringSecurity的安全配置项
+#  user:
+#    name: user # 认证用户名
+#    password: user # 认证密码
